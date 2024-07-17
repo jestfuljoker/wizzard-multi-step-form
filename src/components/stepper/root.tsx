@@ -23,21 +23,23 @@ export function StepperRoot({ steps, initialStep = 0 }: IStepperProps) {
 
 	return (
 		<StepperContext.Provider value={{ previousStep, nextStep }}>
-			<ul className="space-x-6">
-				{steps.map((step, index) => (
-					<li
-						key={step.label}
-						className={cn(
-							'inline-block text-xs px-2 py-1 rounded-md',
-							index === currentStep && 'bg-primary text-primary-foreground',
-						)}
-					>
-						{String(index + 1).padStart(2, '0')}. {step.label}
-					</li>
-				))}
-			</ul>
+			<div>
+				<ul className="space-x-6">
+					{steps.map((step, index) => (
+						<li
+							key={step.label}
+							className={cn(
+								'inline-block text-xs px-2 py-1 rounded-md',
+								index === currentStep && 'bg-primary text-primary-foreground',
+							)}
+						>
+							{String(index + 1).padStart(2, '0')}. {step.label}
+						</li>
+					))}
+				</ul>
 
-			<div className="mt-10">{steps[currentStep].content}</div>
+				<div className="mt-10">{steps[currentStep].content}</div>
+			</div>
 		</StepperContext.Provider>
 	);
 }

@@ -1,12 +1,14 @@
-import { StepperNextButton } from '@/components/stepper/stepper-next-button';
-import { StepperPreviousButton } from '@/components/stepper/stepper-previous-button';
+import { Stepper } from '@/components/stepper';
 
 export function PersonalDataStep() {
 	return (
 		<div>
-			PersonalData
-			<StepperPreviousButton />
-			<StepperNextButton />
+			<Stepper.Header title="Dados pessoais" description="Conte-nos mais sobre você" />
+
+			<Stepper.Footer>
+				<Stepper.PreviousButton />
+				<Stepper.NextButton />
+			</Stepper.Footer>
 		</div>
 	);
 }
