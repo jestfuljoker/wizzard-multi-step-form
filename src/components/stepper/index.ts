@@ -12,4 +12,4 @@ export const Stepper = {
 	Footer: StepperFooter,
 };
 
-export { useStepperContext } from '@/components/stepper/context';
+export { useStepperContext } from '@/components/stepper/context/hook';
